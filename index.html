@@ -4,229 +4,321 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#070D1A">
+<meta name="theme-color" content="#081527">
 <title>글로이음 GLOEUM | AI 해외바이어 마케팅</title>
 <meta name="description" content="이메일과 Instagram DM으로 해외 바이어를 찾고, 첫 연락까지 대신합니다. 케이비즈파트너즈의 글로이음.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<!-- 공유 미리보기 (카카오톡·페이스북·링크드인) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="글로이음 GLOEUM">
+<meta property="og:title" content="글로이음 GLOEUM | AI 해외바이어 마케팅">
+<meta property="og:description" content="이메일과 Instagram DM으로 해외 바이어를 찾고, 첫 연락까지 대신합니다.">
+<meta property="og:url" content="https://gloeum-kbizpartners.onrender.com/">
+<meta property="og:image" content="https://gloeum-kbizpartners.onrender.com/gloeum_og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23081527'/%3E%3Cg fill='none' stroke='%235CBCFA' stroke-width='2'%3E%3Ccircle cx='16' cy='16' r='10'/%3E%3Cellipse cx='16' cy='16' rx='4.5' ry='10'/%3E%3Cpath d='M6 16h20'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 :root{
   color-scheme:dark;
-  --bg0:#070D1A; --bg1:#0B1426; --bg2:#101C33; --card:#13213B; --card2:#172846;
-  --line:rgba(148,178,230,.16); --ink:#E6EDF7; --ink-2:#9FB0C8; --head:#FFFFFF;
-  --accent:#A9C8FF; --accent-2:#7FA8F0; --cyan:#9EE6DA; --rose:#F5B8CF; --gold:#FBE3A1; --lav:#C9BDF7; --p-blue:rgba(169,200,255,.12); --p-pink:rgba(245,184,207,.12);
+  /* 영상·소개서와 같은 남색 계열 + 하늘색 강조 1색 */
+  --bg0:#081527; --bg1:#0B1D35; --bg2:#0F2744; --card:#0E2240; --card2:#12294B;
+  --line:rgba(120,170,230,.16); --line-2:rgba(120,170,230,.28);
+  --ink:#E4ECF6; --ink-2:#9DB0CA; --ink-3:#6F85A3; --head:#FFFFFF;
+  --accent:#5CBCFA; --accent-ink:#06182B; --accent-soft:rgba(92,188,250,.12); --accent-line:rgba(92,188,250,.4);
+  --label:#5CC7DC;
+  --rose:#F2A7C3; --rose-soft:rgba(242,167,195,.10);
+  --gold:#F4D78A;
   --kakao:#FEE500; --kakao-ink:#191600;
-  --font:"Pretendard Variable","Pretendard","Noto Sans KR",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --font:"Pretendard Variable","Pretendard",-apple-system,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
   --maxw:1160px;
+  --ease:cubic-bezier(.2,.8,.2,1);
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:76px}
 body{margin:0;background:var(--bg0);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.7;word-break:keep-all;-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
 a{color:inherit}
 img{max-width:100%;display:block}
+h1,h2,h3{text-wrap:balance}
+p{text-wrap:pretty}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:12px;top:-60px;z-index:60;background:var(--accent);color:var(--accent-ink);padding:10px 14px;border-radius:8px;font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-.center{text-align:center}
+.ic{width:1em;height:1em;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:600;border-radius:12px;padding:16px 26px;font-size:15px;white-space:nowrap;transition:filter .15s,transform .15s}
-.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:700;border-radius:12px;padding:16px 26px;font-size:15px;white-space:nowrap;transition:background-color .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease)}
+.btn .ic{font-size:18px}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0) scale(.98)}
 .btn-kakao{background:var(--kakao);color:var(--kakao-ink)}
-.btn-primary{background:var(--accent);color:#0B1426}
-.btn-white{background:#fff;color:#0B1426}
-.btn-ghost{border:1.5px solid rgba(255,255,255,.35);color:#fff}
+.btn-kakao:hover{box-shadow:0 8px 24px rgba(254,229,0,.18)}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{box-shadow:0 8px 24px rgba(92,188,250,.25)}
+.btn-white{background:#fff;color:var(--accent-ink)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.3);color:#fff}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
 
-.top{position:sticky;top:0;z-index:30;background:rgba(7,13,26,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+/* header */
+.top{position:sticky;top:0;z-index:30;background:rgba(8,21,39,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo .m{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#A9C8FF,#9EE6DA);display:grid;place-items:center}
-.logo b{font-size:18px;font-weight:600;color:#fff;letter-spacing:.02em}
-.logo span{font-size:12px;color:var(--ink-2);font-weight:400}
-.menu{display:flex;align-items:center;gap:30px}
-.menu a.l{text-decoration:none;font-size:14px;font-weight:500;color:var(--ink-2)}
+.logo .m{width:36px;height:36px;border-radius:10px;background:var(--accent-soft);border:1px solid var(--accent-line);display:grid;place-items:center;color:var(--accent)}
+.logo .m .ic{font-size:22px}
+.logo b{font-size:18px;font-weight:800;color:#fff;letter-spacing:.02em}
+.logo span{font-size:12px;color:var(--ink-2);font-weight:500}
+.menu{display:flex;align-items:center;gap:28px}
+.menu a.l{position:relative;text-decoration:none;font-size:14px;font-weight:500;color:var(--ink-2);padding:6px 0;transition:color .2s}
+.menu a.l::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;border-radius:2px;background:var(--accent);transform:scaleX(0);transition:transform .25s var(--ease)}
 .menu a.l:hover{color:#fff}
+.menu a.l.cur{color:#fff}
+.menu a.l.cur::after{transform:scaleX(1)}
 .top .btn{padding:11px 18px;font-size:14px}
 @media (max-width:900px){.menu a.l{display:none}}
 
-.hero{position:relative;color:#fff;background:radial-gradient(ellipse at 50% 60%,#16284D 0%,#0B1530 55%,#070D1A 100%);overflow:hidden}
+/* hero */
+.hero{position:relative;color:#fff;background:radial-gradient(ellipse at 50% 62%,#12335A 0%,#0B2140 50%,#081527 100%);overflow:hidden}
 .hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
-.hero::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at 50% 45%,rgba(7,13,26,.55) 0%,rgba(7,13,26,.15) 60%,rgba(7,13,26,0) 100%),linear-gradient(180deg,rgba(7,13,26,0) 70%,#070D1A 100%);pointer-events:none}
-.hero .wrap{position:relative;z-index:2;padding-top:120px;padding-bottom:110px;text-align:center}
-.badge{display:inline-flex;align-items:center;gap:8px;background:var(--p-blue);border:1px solid rgba(169,200,255,.35);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:500;margin-bottom:24px;color:#CFE2FF}
-.hero h1{font-size:clamp(31px,4.9vw,52px);font-weight:500;line-height:1.25;margin:0 0 20px;letter-spacing:-.03em}
-.hero h1 em{font-style:normal;background:linear-gradient(90deg,#A9C8FF,#9EE6DA);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{font-size:clamp(15px,1.9vw,19px);color:#C9D6EA;margin:0 auto 36px;max-width:36em}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at 50% 45%,rgba(8,21,39,.62) 0%,rgba(8,21,39,.2) 60%,rgba(8,21,39,0) 100%),linear-gradient(180deg,rgba(8,21,39,0) 70%,#081527 100%);pointer-events:none}
+.hero .wrap{position:relative;z-index:2;padding-top:128px;padding-bottom:120px;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(8,21,39,.6);border:1px solid var(--accent-line);border-radius:8px;padding:7px 14px;font-size:14px;font-weight:600;margin-bottom:26px;color:#CFE8FF}
+.badge .ic{color:var(--accent);font-size:16px}
+.hero h1{font-size:clamp(30px,5.4vw,62px);font-weight:800;line-height:1.18;margin:0 0 22px;letter-spacing:-.035em}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:clamp(15px,1.9vw,19px);color:#C4D3E8;margin:0 auto 38px;max-width:34em}
 .hero .actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.hero .note{margin-top:22px;font-size:13px;color:#9FB0C8}
-@media (max-width:900px){.hero .wrap{padding-top:64px;padding-bottom:64px}}
+.hero .note{display:inline-flex;align-items:center;gap:6px;margin-top:24px;font-size:13px;color:var(--ink-2)}
+.hero .note .ic{color:var(--label)}
+@media (max-width:900px){.hero .wrap{padding-top:72px;padding-bottom:72px}}
 
+/* stats */
 .stats{background:var(--bg0);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .stats ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}
 .stats li{padding:38px 16px;text-align:center;border-left:1px solid var(--line)}
 .stats li:first-child{border-left:0}
-.stats b{display:block;font-size:clamp(27px,3.2vw,40px);font-weight:500;line-height:1.2;color:#fff;font-variant-numeric:tabular-nums}
-.stats b .n{display:inline;margin:0;font-size:inherit;background:linear-gradient(90deg,#A9C8FF,#9EE6DA);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stats b{display:block;font-size:clamp(27px,3.2vw,40px);font-weight:700;line-height:1.2;color:#fff;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.stats b .n{display:inline;margin:0;font-size:inherit;color:var(--accent)}
 .stats span{display:block;margin-top:6px;font-size:14px;color:var(--ink-2)}
 @media (max-width:900px){.stats ul{grid-template-columns:1fr 1fr}.stats li{border-left:0;border-top:1px solid var(--line);padding:26px 10px}.stats li:nth-child(-n+2){border-top:0}}
 
-section.sec{padding:100px 0;background:var(--bg0)}
+/* sections */
+section.sec{padding:112px 0 120px;background:var(--bg0)}
 section.sec.bg{background:var(--bg1)}
-.eyebrow{display:block;font-size:13px;font-weight:700;color:var(--cyan);letter-spacing:.12em;margin-bottom:12px}
-.sec h2{font-size:clamp(25px,3.2vw,36px);font-weight:500;line-height:1.3;margin:0 0 14px;color:var(--head);letter-spacing:-.03em}
+.eyebrow{display:block;font-size:13px;font-weight:700;color:var(--label);letter-spacing:.12em;margin-bottom:12px}
+.sec h2{font-size:clamp(26px,3.4vw,40px);font-weight:800;line-height:1.28;margin:0 0 14px;color:var(--head);letter-spacing:-.035em}
 .sec h2 em{font-style:normal;color:var(--accent)}
-.sec .lead{color:var(--ink-2);font-size:16px;margin:0 auto 52px;max-width:38em}
-@media (max-width:900px){section.sec{padding:64px 0}.sec .lead{margin-bottom:34px}}
+.sec .lead{color:var(--ink-2);font-size:16px;margin:0 0 52px;max-width:36em}
+.sec-head{max-width:720px}
+.center{text-align:center}
+.center .sec-head,.center .lead{margin-left:auto;margin-right:auto}
+@media (max-width:900px){section.sec{padding:68px 0 76px}.sec .lead{margin-bottom:34px}}
 
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+/* problem / why : 왼쪽 제목 + 오른쪽 2x2 목록 */
+.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start}
+.split .sec-head{position:sticky;top:110px}
+.split .lead{margin-bottom:0}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.feat > div{background:var(--bg0);padding:30px 28px;transition:background-color .25s}
+.bg .feat > div{background:var(--bg1)}
+.feat > div:hover{background:var(--card)}
+.feat .i{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin-bottom:18px}
+.feat .i .ic{font-size:22px}
+.feat.warn .i{background:rgba(242,167,195,.12);color:var(--rose)}
+.feat h3{font-size:18px;font-weight:700;margin:0 0 8px;color:#fff;letter-spacing:-.02em}
+.feat p{margin:0;color:var(--ink-2);font-size:14.5px;line-height:1.65}
+@media (max-width:900px){.split{grid-template-columns:1fr;gap:30px}.split .sec-head{position:static}.feat > div{padding:22px 18px}}
+@media (max-width:520px){
+  .feat{grid-template-columns:1fr}
+  .feat > div{display:grid;grid-template-columns:44px 1fr;column-gap:14px;padding:20px 18px}
+  .feat .i{grid-row:span 2;margin-bottom:0}
+  .feat h3{margin:0 0 4px;align-self:center}
+}
+
+/* service */
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px 26px;text-align:left;transition:border-color .2s}
-.card:hover{border-color:rgba(169,200,255,.45)}
-.card .i{width:54px;height:54px;border-radius:14px;background:var(--p-blue);display:grid;place-items:center;font-size:23px;margin-bottom:18px}
-.card h3{font-size:18px;font-weight:500;margin:0 0 8px;color:#fff}
-.card p{margin:0;color:var(--ink-2);font-size:14px}
-@media (max-width:900px){.grid4{grid-template-columns:1fr 1fr;gap:12px}.grid2{grid-template-columns:1fr}.card{padding:22px 18px}}
-@media (max-width:480px){.grid4{grid-template-columns:1fr}}
-
-.svc{border-radius:20px;padding:36px;border:1px solid var(--line);background:var(--card);text-align:left}
-.svc .tag{display:inline-block;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;margin-bottom:14px}
-.svc.mail{border-top:3px solid var(--accent)}
-.svc.ig{border-top:3px solid var(--rose)}
-.svc.mail .tag{background:var(--p-blue);color:var(--accent)}
-.svc.ig .tag{background:var(--p-pink);color:var(--rose)}
-.svc h3{font-size:23px;font-weight:500;margin:0 0 10px;color:#fff}
-.svc p{margin:0 0 20px;color:var(--ink-2)}
-.svc ul{list-style:none;margin:0 0 24px;padding:0}
+.svc{border-radius:20px;padding:38px 36px 34px;border:1px solid var(--line);background:var(--card);text-align:left;display:flex;flex-direction:column;transition:border-color .25s,transform .25s var(--ease)}
+.svc:hover{transform:translateY(-2px)}
+.svc.mail:hover{border-color:var(--accent-line)}
+.svc.ig:hover{border-color:rgba(242,167,195,.4)}
+.svc .tag{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.06em;padding:6px 10px;border-radius:6px;margin-bottom:16px}
+.svc .tag .ic{font-size:15px}
+.svc.mail .tag{background:var(--accent-soft);color:var(--accent)}
+.svc.ig .tag{background:var(--rose-soft);color:var(--rose)}
+.svc h3{font-size:24px;font-weight:800;margin:0 0 10px;color:#fff;letter-spacing:-.03em}
+.svc p{margin:0 0 22px;color:var(--ink-2)}
+.svc ul{list-style:none;margin:0 0 26px;padding:0;flex:1}
 .svc li{padding:8px 0 8px 30px;position:relative}
-.svc li::before{content:"✔";position:absolute;left:0;top:8px;color:var(--accent);font-weight:800}
-.svc.ig li::before{color:var(--rose)}
-.svc .price{border-top:1px solid var(--line);padding-top:18px;font-size:20px;font-weight:500;color:#fff;margin:0}
-.svc .price small{font-size:13px;font-weight:400;color:var(--ink-2)}
-@media (max-width:900px){.svc{padding:26px}}
+.svc li::before{content:"";position:absolute;left:2px;top:15px;width:14px;height:8px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+.svc.ig li::before{border-color:var(--rose)}
+.svc .price{border-top:1px solid var(--line);padding-top:20px;font-size:22px;font-weight:800;color:#fff;margin:0;letter-spacing:-.02em}
+.svc .price small{font-size:13px;font-weight:500;color:var(--ink-2);margin-left:4px}
+@media (max-width:900px){.grid2{grid-template-columns:1fr}.svc{padding:28px 24px}}
 
+/* compare */
 .table-wrap{overflow-x:auto;border-radius:18px;border:1px solid var(--line);background:var(--card)}
 table.cmp{width:100%;border-collapse:collapse;min-width:680px}
-.cmp th,.cmp td{padding:18px 20px;border-bottom:1px solid var(--line);text-align:center;font-size:14px}
+.cmp th,.cmp td{padding:18px 20px;border-bottom:1px solid var(--line);text-align:center;font-size:14.5px}
 .cmp thead th{background:var(--bg2);font-weight:700;color:#fff}
-.cmp thead th.us{background:#A9C8FF;color:#0B1426}
-.cmp td.us{background:var(--p-blue);font-weight:600;color:#DCE8FF}
+.cmp thead th.us{background:var(--accent);color:var(--accent-ink);font-weight:800}
+.cmp td.us{background:var(--accent-soft);font-weight:700;color:#DDF0FF}
+.cmp td.us .ic{color:var(--accent);font-size:15px;vertical-align:-2px;margin-right:4px;stroke-width:2.4}
 .cmp tbody th{text-align:left;font-weight:600;color:#fff}
 .cmp tr:last-child th,.cmp tr:last-child td{border-bottom:0}
-.cmp .x{color:#6B7C95}
+.cmp .x{color:var(--ink-3)}
 
+/* steps */
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:14px;counter-reset:s;position:relative}
 .steps::before{content:"";position:absolute;left:8%;right:8%;top:50%;height:2px;background:var(--line);z-index:0}
-.steps::after{content:"";position:absolute;left:8%;top:50%;height:2px;width:0;background:linear-gradient(90deg,#A9C8FF,#C9BDF7,#9EE6DA);z-index:0;transition:width 1.8s ease}
+.steps::after{content:"";position:absolute;left:8%;top:50%;height:2px;width:0;background:var(--accent);z-index:0;transition:width 1.8s var(--ease)}
 .steps.on::after{width:84%}
-.steps li{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 16px;text-align:center;counter-increment:s;position:relative;z-index:1;opacity:.35;transform:translateY(10px);transition:opacity .5s,transform .5s,border-color .5s}
-.steps.on li{opacity:1;transform:none;border-color:rgba(169,200,255,.35)}
+.steps li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 16px 24px;text-align:center;counter-increment:s;position:relative;z-index:1;opacity:.35;transform:translateY(10px);transition:opacity .5s,transform .5s var(--ease),border-color .5s}
+.steps.on li{opacity:1;transform:none;border-color:var(--line-2)}
 .steps.on li:nth-child(2){transition-delay:.25s}.steps.on li:nth-child(3){transition-delay:.5s}.steps.on li:nth-child(4){transition-delay:.75s}.steps.on li:nth-child(5){transition-delay:1s}.steps.on li:nth-child(6){transition-delay:1.25s}
-.steps li::before{content:"0" counter(s);display:block;font-size:13px;font-weight:800;color:var(--cyan);margin-bottom:6px}
-.steps .e{font-size:27px;display:block;margin-bottom:8px}
-.steps b{display:block;font-size:15px;font-weight:500;color:#fff}
+.steps li::before{content:"0" counter(s);display:block;font-size:13px;font-weight:800;color:var(--label);margin-bottom:10px;font-variant-numeric:tabular-nums}
+.steps .e{display:grid;place-items:center;width:44px;height:44px;margin:0 auto 12px;border-radius:12px;background:var(--accent-soft);color:var(--accent)}
+.steps .e .ic{font-size:22px}
+.steps b{display:block;font-size:15px;font-weight:700;color:#fff}
 .steps small{display:block;color:var(--ink-2);font-size:13px;line-height:1.5;margin-top:6px}
 @media (max-width:900px){.steps{grid-template-columns:repeat(3,1fr);gap:10px}.steps li{padding:18px 10px}.steps::before,.steps::after{display:none}}
+@media (max-width:420px){.steps{grid-template-columns:repeat(2,1fr)}}
 
-.video-row{display:grid;grid-template-columns:1fr 300px;gap:60px;align-items:center;text-align:left}
+/* video */
+.video-row{display:grid;grid-template-columns:1fr 300px;gap:72px;align-items:center;text-align:left}
 .video-row h2{margin-bottom:16px}
-.video-row ul{list-style:none;margin:24px 0 0;padding:0}
-.video-row li{padding:10px 0;border-top:1px solid var(--line);display:flex;gap:12px;align-items:center}
-.phone{position:relative;width:100%;aspect-ratio:9/16;border-radius:32px;padding:10px;background:#040914;box-shadow:0 30px 70px rgba(169,200,255,.18),0 0 0 1px rgba(148,178,230,.2) inset}
-.phone video{width:100%;height:100%;object-fit:cover;border-radius:24px;display:block;background:#0B1426}
-.sound{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);background:rgba(255,255,255,.95);color:#0B1426;border:0;border-radius:999px;padding:8px 14px;font:600 12px/1 var(--font);cursor:pointer}
-@media (max-width:900px){.video-row{grid-template-columns:1fr;gap:32px}.phone{max-width:260px;margin:0 auto}}
+.video-row .lead{margin:0}
+.video-row ul{list-style:none;margin:28px 0 0;padding:0}
+.video-row li{padding:12px 0;border-top:1px solid var(--line);display:flex;gap:12px;align-items:center}
+.video-row li .ic{color:var(--accent);font-size:20px}
+.phone{position:relative;width:100%;aspect-ratio:9/16;border-radius:32px;padding:10px;background:#040C18;box-shadow:0 30px 70px rgba(92,188,250,.16),0 0 0 1px rgba(120,170,230,.22) inset}
+.phone video{width:100%;height:100%;object-fit:cover;border-radius:24px;display:block;background:#0B1D35}
+.sound{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.95);color:var(--accent-ink);border:0;border-radius:999px;padding:8px 14px;font:700 12px/1 var(--font);cursor:pointer;transition:transform .2s var(--ease)}
+.sound:active{transform:translateX(-50%) scale(.96)}
+.sound .ic{font-size:15px}
+@media (max-width:900px){.video-row{grid-template-columns:1fr;gap:36px}.phone{max-width:260px;margin:0 auto}}
 
+/* policy */
 .policy{display:grid;grid-template-columns:1fr 1fr;gap:20px;text-align:left}
-.pbox{border-radius:18px;padding:30px}
-.pbox.yes{background:var(--p-blue);border:1px solid rgba(169,200,255,.35)}
-.pbox.no{background:var(--p-pink);border:1px solid rgba(245,184,207,.3)}
-.pbox h3{margin:0 0 14px;font-size:18px;font-weight:500;color:#fff}
+.pbox{border-radius:18px;padding:32px}
+.pbox.yes{background:var(--accent-soft);border:1px solid var(--accent-line)}
+.pbox.no{background:var(--rose-soft);border:1px solid rgba(242,167,195,.3)}
+.pbox h3{display:flex;align-items:center;gap:10px;margin:0 0 16px;font-size:18px;font-weight:700;color:#fff}
+.pbox h3 .ic{font-size:22px}
+.pbox.yes h3 .ic{color:var(--accent)}
+.pbox.no h3 .ic{color:var(--rose)}
 .pbox ul{margin:0;padding:0;list-style:none}
-.pbox li{padding:8px 0;display:flex;gap:10px}
-.slogan{margin:36px auto 0;font-size:clamp(18px,2.3vw,25px);font-weight:400;color:#DCE8FF}
-@media (max-width:900px){.policy{grid-template-columns:1fr}}
+.pbox li{padding:9px 0;display:flex;gap:10px;border-top:1px solid var(--line)}
+.pbox li:first-child{border-top:0}
+.slogan{margin:40px auto 0;font-size:clamp(19px,2.4vw,26px);font-weight:700;color:#DDF0FF;letter-spacing:-.02em}
+@media (max-width:900px){.policy{grid-template-columns:1fr}.pbox{padding:24px}}
 
+/* pricing */
 .plans{display:grid;grid-template-columns:1fr 1fr;gap:24px;text-align:left}
 .plan{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
-.plan .ph{padding:20px 26px;font-size:17px;font-weight:500}
-.plan.mail .ph{background:linear-gradient(90deg,#A9C8FF,#C9BDF7);color:#0B1426}
-.plan.ig .ph{background:linear-gradient(90deg,#F5B8CF,#FBD3C4);color:#2A1020}
+.plan .ph{display:flex;align-items:center;gap:10px;padding:20px 26px;font-size:17px;font-weight:700;border-bottom:1px solid var(--line)}
+.plan .ph .ic{font-size:20px}
+.plan.mail .ph{background:var(--accent-soft);color:#DDF0FF}
+.plan.mail .ph .ic{color:var(--accent)}
+.plan.ig .ph{background:var(--rose-soft);color:#FBE3EC}
+.plan.ig .ph .ic{color:var(--rose)}
 .plan table{width:100%;border-collapse:collapse}
-.plan th,.plan td{padding:16px 26px;border-top:1px solid var(--line);text-align:left;font-weight:400}
+.plan th,.plan td{padding:18px 26px;border-top:1px solid var(--line);text-align:left;font-weight:400}
 .plan tr:first-child th,.plan tr:first-child td{border-top:0}
 .plan th{font-weight:700;color:#fff;white-space:nowrap}
 .plan td.q{color:var(--ink-2);font-size:14px}
-.plan td.w{text-align:right;font-weight:500;color:#fff;font-size:16px;white-space:nowrap}
-.plan td.w small{display:block;font-size:12px;font-weight:500;color:var(--gold)}
-.hot{display:inline-block;background:#A9C8FF;color:#0B1426;font-size:12px;font-weight:700;padding:2px 7px;border-radius:6px;margin-left:6px;vertical-align:2px}
+.plan td.w{text-align:right;font-weight:800;color:#fff;font-size:17px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.plan td.w small{display:block;font-size:12px;font-weight:600;color:var(--gold)}
+.plan tr.rec{background:rgba(92,188,250,.07);box-shadow:inset 3px 0 0 var(--accent)}
+.plan.ig tr.rec{background:rgba(242,167,195,.06);box-shadow:inset 3px 0 0 var(--rose)}
+.hot{display:inline-block;background:var(--accent);color:var(--accent-ink);font-size:11.5px;font-weight:800;padding:2px 7px;border-radius:5px;margin-left:6px;vertical-align:2px}
+.plan.ig .hot{background:var(--rose);color:#2A1020}
 .fine{color:var(--ink-2);font-size:13px;margin:16px 0 0;text-align:left}
-.extras{margin-top:40px;text-align:left}
-.extras h3{font-size:18px;font-weight:500;margin:0 0 14px;color:#fff}
+.extras{margin-top:44px;text-align:left}
+.extras h3{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:18px;font-weight:700;margin:0 0 14px;color:#fff}
+.extras h3 .sub{font-weight:400;font-size:14px;color:var(--ink-2)}
 .extras dl{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:0}
-.extras dl div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.extras dl div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
 .extras dt{font-weight:700;color:#fff;font-size:14px}
 .extras dd{margin:4px 0 0;color:var(--ink-2);font-size:13px}
-@media (max-width:900px){.plans{grid-template-columns:1fr}.plan th,.plan td{padding:14px 16px}.extras dl{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){.plans{grid-template-columns:1fr}.plan th,.plan td{padding:14px 16px}.plan .ph{padding:18px 16px}.extras dl{grid-template-columns:1fr 1fr}}
+/* 모바일: 요금제 이름 아래에 설명을 한 줄로 */
+@media (max-width:600px){
+  .plan table,.plan tbody{display:block}
+  .plan tr{display:grid;grid-template-columns:1fr auto;border-top:1px solid var(--line)}
+  .plan tr:first-child{border-top:0}
+  .plan th,.plan td{border-top:0}
+  .plan th{padding:14px 16px 2px}
+  .plan td.q{grid-column:1;grid-row:2;padding:0 16px 14px}
+  .plan td.w{grid-column:2;grid-row:1 / span 2;align-self:center}
+}
 
 /* offer + animated chart */
-.offer{margin-top:28px;background:linear-gradient(135deg,#1A2A4E,#2B2F5E);border:1px solid rgba(201,189,247,.35);color:#fff;border-radius:20px;padding:34px 36px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;text-align:left}
-.offer h3{margin:0 0 8px;font-size:22px;font-weight:500}
+.offer{margin-top:28px;background:var(--card2);border:1px solid var(--accent-line);color:#fff;border-radius:20px;padding:36px 38px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;text-align:left;position:relative;overflow:hidden}
+.offer::before{content:"";position:absolute;right:-120px;top:-160px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(92,188,250,.16),rgba(92,188,250,0) 70%);pointer-events:none}
+.offer > *{position:relative}
+.offer h3{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 10px;font-size:23px;font-weight:800;letter-spacing:-.03em}
+.offer h3 .ic{color:var(--gold);font-size:24px}
 .offer h3 em{font-style:normal;color:var(--gold)}
-.offer p{margin:0 0 20px;color:#D6E2F5;font-size:14px}
-.chart{background:rgba(7,13,26,.35);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:22px}
-.chart .cap{font-size:13px;color:#C9D6EA;margin:0 0 16px}
+.offer p{margin:0 0 22px;color:#CBD9EC;font-size:14px}
+.chart{background:rgba(8,21,39,.5);border:1px solid var(--line-2);border-radius:16px;padding:22px}
+.chart .cap{display:flex;align-items:center;gap:6px;font-size:13px;color:#C4D3E8;margin:0 0 16px}
+.chart .cap .ic{color:var(--accent)}
 .bar{margin-bottom:14px}
-.bar .lab{display:flex;justify-content:space-between;font-size:14px;font-weight:600;margin-bottom:6px}
-.bar .track{height:16px;border-radius:999px;background:rgba(255,255,255,.1);overflow:hidden}
-.bar .fill{height:100%;width:0;border-radius:999px;transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
-.bar.normal .fill{background:#8A9AB5}
-.bar.early .fill{background:linear-gradient(90deg,#FBE3A1,#F5B8CF)}
+.bar .lab{display:flex;justify-content:space-between;font-size:14px;font-weight:600;margin-bottom:6px;font-variant-numeric:tabular-nums}
+.bar .track{height:14px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
+.bar .fill{height:100%;width:0;border-radius:999px;transition:width 1.6s var(--ease)}
+.bar.normal .fill{background:#6F85A3}
+.bar.early .fill{background:var(--gold)}
 .chart.on .bar.normal .fill{width:100%}
 .chart.on .bar.early .fill{width:70%}
-.save{margin-top:6px;font-size:16px;font-weight:500;color:var(--gold)}
+.save{margin-top:6px;font-size:17px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums}
 @media (max-width:900px){.offer{grid-template-columns:1fr;padding:26px;gap:22px}}
 
-.faq{max-width:860px;margin:0 auto;text-align:left}
-.faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin-bottom:12px}
-.faq summary{cursor:pointer;font-weight:500;color:#fff;list-style:none;display:flex;justify-content:space-between;gap:12px;font-size:15px}
+/* faq */
+.faq{max-width:860px;text-align:left}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin-bottom:10px;transition:border-color .2s}
+.faq details:hover,.faq details[open]{border-color:var(--line-2)}
+.faq summary{cursor:pointer;font-weight:600;color:#fff;list-style:none;display:flex;justify-content:space-between;gap:12px;font-size:15.5px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::before{content:"Q.";color:var(--cyan);margin-right:8px}
+.faq summary::before{content:"Q.";color:var(--label);font-weight:800;margin-right:4px}
 .faq summary span{flex:1}
-.faq summary::after{content:"+";color:var(--ink-2);font-weight:400;font-size:20px;line-height:1}
-.faq details[open] summary::after{content:"−"}
-.faq details p{margin:12px 0 0;color:var(--ink-2)}
+.faq summary::after{content:"";width:10px;height:10px;margin-top:6px;border-right:2px solid var(--ink-2);border-bottom:2px solid var(--ink-2);transform:rotate(45deg);transition:transform .25s var(--ease);flex:none}
+.faq details[open] summary::after{transform:rotate(-135deg);margin-top:10px}
+.faq details p{margin:12px 0 0;padding-left:26px;color:var(--ink-2)}
 
-.cta{position:relative;color:#fff;background:radial-gradient(ellipse at 50% 100%,rgba(201,189,247,.18) 0%,rgba(169,200,255,.08) 40%,#070D1A 75%);text-align:center}
-.cta::before{content:none}
+/* cta */
+.cta{position:relative;color:#fff;background:radial-gradient(ellipse at 50% 110%,rgba(92,188,250,.18) 0%,rgba(92,188,250,.05) 40%,#081527 75%);text-align:center}
 .cta .wrap{position:relative}
-.cta .lead{color:#C9D6EA}
+.cta .lead{color:#C4D3E8;margin-left:auto;margin-right:auto}
 .cta .actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.info{margin:44px auto 0;max-width:720px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.14);border-radius:16px;overflow:hidden}
-.info div{background:rgba(7,13,26,.75);padding:18px 14px}
-.info dt{font-size:12px;color:#8FA1BB}
-.info dd{margin:4px 0 0;font-weight:600}
+.info{margin:48px auto 0;max-width:720px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-2);border-radius:16px;overflow:hidden}
+.info div{background:rgba(8,21,39,.8);padding:18px 14px}
+.info dt{font-size:12px;color:var(--ink-3)}
+.info dd{margin:4px 0 0;font-weight:700}
 .info a{text-decoration:none}
 @media (max-width:600px){.info{grid-template-columns:1fr}}
 
-footer{background:#040914;color:#7F90A8;font-size:13px;padding:40px 0 110px;border-top:1px solid var(--line)}
+footer{background:#050E1C;color:#7F93AE;font-size:13px;padding:40px 0 110px;border-top:1px solid var(--line)}
 footer .wrap{display:grid;grid-template-columns:1fr auto;gap:20px}
 footer b{color:#fff;font-size:15px}
 footer p{margin:4px 0}
 @media (max-width:900px){footer .wrap{grid-template-columns:1fr}}
 
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .reveal.on{opacity:1;transform:none}
 
 .sticky{display:none}
 @media (max-width:900px){
   .top .btn-kakao{display:none}
-  .sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;gap:8px;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(7,13,26,.95);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+  .sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;gap:8px;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(8,21,39,.95);border-top:1px solid var(--line);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
   .sticky .btn{padding:14px 16px;font-size:14px}
   .sticky .btn-kakao{flex:1}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .btn,.reveal,.steps li,.steps::after,.bar .fill{transition:none !important}
+  .btn,.reveal,.steps li,.steps::after,.bar .fill,.svc,.menu a.l::after{transition:none !important}
   .reveal{opacity:1;transform:none}
   .steps li{opacity:1;transform:none}
 }
@@ -234,10 +326,44 @@ footer p{margin:4px 0}
 </head>
 <body>
 
+<!-- 아이콘 모음 (선 굵기 통일) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M12 4c4.97 0 9 3.13 9 7s-4.03 7-9 7c-.9 0-1.77-.1-2.6-.3L5 20l1.1-3.6C4.2 15.1 3 13.2 3 11c0-3.87 4.03-7 9-7z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.2l1.6 4-2 1.3a11 11 0 0 0 6.9 6.9l1.3-2 4 1.6V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.6A1.5 1.5 0 0 1 5 4z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 20 20"/></symbol>
+  <symbol id="i-mailq" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/><path d="M15 15.5h5"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
+  <symbol id="i-device" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"/></symbol>
+  <symbol id="i-verify" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.2 7.5 9.5 4.3-1.3 7.5-5 7.5-9.5V6z"/><path d="m8.8 12 2.2 2.2 4.4-4.4"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"/><path d="m13.5 6.5 4 4"/></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M3 13.5 5.5 5h13l2.5 8.5V19a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M3 13.5h5l1.5 2.5h5l1.5-2.5h5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".6" fill="currentColor"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M20.5 3.5 10 14M20.5 3.5 14 20.5l-4-6.5-6.5-4z"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3.5" y="8" width="17" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12M12 8S10.5 3.5 8 4.5 9 8 12 8zm0 0s1.5-4.5 4-3.5S15 8 12 8z"/></symbol>
+  <symbol id="i-okcircle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.2 12.2 2.6 2.6 5-5"/></symbol>
+  <symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.8 5.8l12.4 12.4"/></symbol>
+  <symbol id="i-reply" viewBox="0 0 24 24"><path d="M9 7 4 12l5 5"/><path d="M4 12h10a6 6 0 0 1 6 6v1"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="3.5" width="11" height="17" rx="1"/><path d="M15 9h4a1 1 0 0 1 1 1v10.5M8 8h3M8 12h3M8 16h3M3 20.5h18"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 15v-3M12 15V9M16 15V6"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r=".8"/><circle cx="4.5" cy="12" r=".8"/><circle cx="4.5" cy="18" r=".8"/></symbol>
+  <symbol id="i-stack" viewBox="0 0 24 24"><path d="M12 3 3 7.5 12 12l9-4.5z"/><path d="m3 12 9 4.5 9-4.5M3 16.5 12 21l9-4.5"/></symbol>
+  <symbol id="i-sound-off" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="m16 9.5 5 5m0-5-5 5"/></symbol>
+  <symbol id="i-sound-on" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M16 9a4.2 4.2 0 0 1 0 6M18.5 6.5a7.8 7.8 0 0 1 0 11"/></symbol>
+  <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.8 9.2c-.5-.8-1.5-1.2-2.8-1.2-1.7 0-2.8.8-2.8 2s1.1 1.7 2.8 2 2.8.8 2.8 2-1.1 2-2.8 2c-1.3 0-2.4-.4-2.9-1.3M12 6.5v11"/></symbol>
+</svg>
+
+<a class="skip" href="#main">본문 바로가기</a>
+
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="글로이음 처음으로">
-      <span class="m" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg></span>
+      <span class="m" aria-hidden="true"><svg class="ic"><use href="#i-globe"/></svg></span>
       <b>GLOEUM</b><span>글로이음</span>
     </a>
     <nav class="menu" aria-label="주요 메뉴">
@@ -246,24 +372,24 @@ footer p{margin:4px 0}
       <a class="l" href="#process">진행 방식</a>
       <a class="l" href="#price">요금 안내</a>
       <a class="l" href="#faq">FAQ</a>
-      <a class="btn btn-kakao" href="http://pf.kakao.com/_QCMxas" target="_blank" rel="noopener">💬 무료 상담</a>
+      <a class="btn btn-kakao" href="https://pf.kakao.com/_QCMxas" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>무료 상담</a>
     </nav>
   </div>
 </header>
 
 <main id="top">
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="main">
     <canvas id="net" aria-hidden="true"></canvas>
     <div class="wrap">
-      <span class="badge">🌏 케이비즈파트너즈 AI 해외바이어 마케팅</span>
+      <span class="badge"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg>케이비즈파트너즈 AI 해외바이어 마케팅</span>
       <h1>해외 바이어 발굴부터 첫 연락까지,<br><em>글로이음</em>이 대신 운영합니다</h1>
       <p>이메일과 Instagram DM으로 바이어를 찾고 검증한 뒤, 제품에 맞춘 메시지로 직접 연락해 실제 회신과 문의를 전해 드립니다.</p>
       <div class="actions">
-        <a class="btn btn-kakao" href="http://pf.kakao.com/_QCMxas" target="_blank" rel="noopener">💬 카톡으로 무료 상담받기</a>
-        <a class="btn btn-ghost" href="tel:16702531">📞 대표번호 1670-2531</a>
+        <a class="btn btn-kakao" href="https://pf.kakao.com/_QCMxas" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>카톡으로 무료 상담받기</a>
+        <a class="btn btn-ghost" href="tel:16702531"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>대표번호 1670-2531</a>
       </div>
-      <p class="note">🔒 바이어 DB 판매 없음 · 매월 최대 10개 고객사만 운영</p>
+      <p class="note"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>바이어 DB 판매 없음 · 매월 최대 10개 고객사만 운영</p>
     </div>
   </section>
 
@@ -280,44 +406,50 @@ footer p{margin:4px 0}
   </div>
 
   <!-- PROBLEM -->
-  <section class="sec center">
-    <div class="wrap">
-      <span class="eyebrow">PROBLEM</span>
-      <h2>해외영업, 이런 고민 있으셨죠?</h2>
-      <p class="lead">누구에게, 어떻게, 꾸준히 연락할 것인가. 해외영업은 대부분 여기서 막힙니다.</p>
-      <div class="reveal grid4">
-        <div class="card"><div class="i">🔎</div><h3>바이어를 못 찾겠다</h3><p>검색·전시회·지인 DB는 정확도와 지속성이 낮습니다.</p></div>
-        <div class="card"><div class="i">📭</div><h3>연락처를 못 믿겠다</h3><p>오래된 이메일, 추정 주소, 업종 불일치가 섞여 있습니다.</p></div>
-        <div class="card"><div class="i">📝</div><h3>영문 자료가 부담된다</h3><p>회사소개·제품소개·제안서를 매번 새로 써야 합니다.</p></div>
-        <div class="card"><div class="i">📱</div><h3>이메일만으론 부족하다</h3><p>Instagram에서 활동하는 판매·유통 바이어를 놓칩니다.</p></div>
+  <section class="sec">
+    <div class="wrap split">
+      <div class="sec-head">
+        <span class="eyebrow">PROBLEM</span>
+        <h2>해외영업, 이런 고민 있으셨죠?</h2>
+        <p class="lead">누구에게, 어떻게, 꾸준히 연락할 것인가. 해외영업은 대부분 여기서 막힙니다.</p>
+      </div>
+      <div class="reveal feat warn">
+        <div><div class="i"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg></div><h3>바이어를 못 찾겠다</h3><p>검색·전시회·지인 DB는 정확도와 지속성이 낮습니다.</p></div>
+        <div><div class="i"><svg class="ic" aria-hidden="true"><use href="#i-mailq"/></svg></div><h3>연락처를 못 믿겠다</h3><p>오래된 이메일, 추정 주소, 업종 불일치가 섞여 있습니다.</p></div>
+        <div><div class="i"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg></div><h3>영문 자료가 부담된다</h3><p>회사소개·제품소개·제안서를 매번 새로 써야 합니다.</p></div>
+        <div><div class="i"><svg class="ic" aria-hidden="true"><use href="#i-device"/></svg></div><h3>이메일만으론 부족하다</h3><p>Instagram에서 활동하는 판매·유통 바이어를 놓칩니다.</p></div>
       </div>
     </div>
   </section>
 
   <!-- WHY -->
-  <section class="sec bg center" id="why">
-    <div class="wrap">
-      <span class="eyebrow">WHY GLOEUM</span>
-      <h2>왜 <em>글로이음</em>이어야 할까요?</h2>
-      <p class="lead">리스트를 넘기고 끝나는 게 아니라, 바이어와 실제로 연락이 닿을 때까지 운영합니다.</p>
-      <div class="reveal grid4">
-        <div class="card"><div class="i">🧭</div><h3>원하는 채널 선택</h3><p>이메일, Instagram DM 중 필요한 채널만 쓰거나 함께 씁니다.</p></div>
-        <div class="card"><div class="i">✅</div><h3>출처 확인된 연락처</h3><p>공식 홈페이지에서 확인된 업무용 연락처만 쓰고, 추정 이메일은 쓰지 않습니다.</p></div>
-        <div class="card"><div class="i">✍️</div><h3>바이어 맞춤 메시지</h3><p>수입상·유통사·셀러 등 상대 유형에 맞춰 첫 문장부터 다르게 씁니다.</p></div>
-        <div class="card"><div class="i">🤝</div><h3>실제 문의만 전달</h3><p>회신·견적·샘플 문의 등 실제로 반응한 바이어 정보를 정리해 드립니다.</p></div>
+  <section class="sec bg" id="why">
+    <div class="wrap split">
+      <div class="sec-head">
+        <span class="eyebrow">WHY GLOEUM</span>
+        <h2>왜 <em>글로이음</em>이어야 할까요?</h2>
+        <p class="lead">리스트를 넘기고 끝나는 게 아니라, 바이어와 실제로 연락이 닿을 때까지 운영합니다.</p>
+      </div>
+      <div class="reveal feat">
+        <div><div class="i"><svg class="ic" aria-hidden="true"><use href="#i-route"/></svg></div><h3>원하는 채널 선택</h3><p>이메일, Instagram DM 중 필요한 채널만 쓰거나 함께 씁니다.</p></div>
+        <div><div class="i"><svg class="ic" aria-hidden="true"><use href="#i-verify"/></svg></div><h3>출처 확인된 연락처</h3><p>공식 홈페이지에서 확인된 업무용 연락처만 쓰고, 추정 이메일은 쓰지 않습니다.</p></div>
+        <div><div class="i"><svg class="ic" aria-hidden="true"><use href="#i-pen"/></svg></div><h3>바이어 맞춤 메시지</h3><p>수입상·유통사·셀러 등 상대 유형에 맞춰 첫 문장부터 다르게 씁니다.</p></div>
+        <div><div class="i"><svg class="ic" aria-hidden="true"><use href="#i-inbox"/></svg></div><h3>실제 문의만 전달</h3><p>회신·견적·샘플 문의 등 실제로 반응한 바이어 정보를 정리해 드립니다.</p></div>
       </div>
     </div>
   </section>
 
   <!-- SERVICE -->
-  <section class="sec center" id="service">
+  <section class="sec" id="service">
     <div class="wrap">
-      <span class="eyebrow">SERVICE</span>
-      <h2>두 가지 해외영업 채널</h2>
-      <p class="lead">하나만 선택해도, 두 채널을 함께 이용해도 됩니다.</p>
+      <div class="sec-head">
+        <span class="eyebrow">SERVICE</span>
+        <h2>두 가지 해외영업 채널</h2>
+        <p class="lead">하나만 선택해도, 두 채널을 함께 이용해도 됩니다.</p>
+      </div>
       <div class="reveal grid2">
         <article class="svc mail">
-          <span class="tag">✉️ WEB BUYER</span>
+          <span class="tag"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>WEB BUYER</span>
           <h3>해외바이어 이메일 마케팅</h3>
           <p>공식 홈페이지를 기준으로 수입상·유통사·도매상·소매 체인을 찾아 검증하고, 제품 맞춤 영문 제안서(CL)로 메일링을 운영합니다.</p>
           <ul>
@@ -329,7 +461,7 @@ footer p{margin:4px 0}
           <p class="price">월 30만 원부터 <small>VAT 별도</small></p>
         </article>
         <article class="svc ig">
-          <span class="tag">📸 SOCIAL BUYER</span>
+          <span class="tag"><svg class="ic" aria-hidden="true"><use href="#i-insta"/></svg>SOCIAL BUYER</span>
           <h3>Instagram 바이어 DM 마케팅</h3>
           <p>Instagram에서 실제로 판매·유통 활동을 하는 브랜드·셀러·크리에이터 계정을 찾아 검증하고, 계정에 맞춘 DM을 운영합니다.</p>
           <ul>
@@ -345,20 +477,22 @@ footer p{margin:4px 0}
   </section>
 
   <!-- COMPARE -->
-  <section class="sec bg center">
+  <section class="sec bg">
     <div class="wrap">
-      <span class="eyebrow">COMPARE</span>
-      <h2>무엇이 다른가요?</h2>
-      <p class="lead">바이어 DB를 사거나 직접 영업할 때와 비교해 보세요.</p>
+      <div class="sec-head">
+        <span class="eyebrow">COMPARE</span>
+        <h2>무엇이 다른가요?</h2>
+        <p class="lead">바이어 DB를 사거나 직접 영업할 때와 비교해 보세요.</p>
+      </div>
       <div class="reveal table-wrap">
         <table class="cmp">
           <thead><tr><th scope="col">구분</th><th scope="col">바이어 DB 구매</th><th scope="col">직접 영업</th><th scope="col" class="us">글로이음</th></tr></thead>
           <tbody>
-            <tr><th scope="row">연락처 출처 확인</th><td class="x">확인 어려움</td><td>직접 확인</td><td class="us">✔ 출처 기록</td></tr>
-            <tr><th scope="row">영문 제안서 작성</th><td class="x">직접 작성</td><td class="x">직접 작성</td><td class="us">✔ 맞춤 작성</td></tr>
-            <tr><th scope="row">발송·DM 운영</th><td class="x">직접 운영</td><td class="x">직접 운영</td><td class="us">✔ 대신 운영</td></tr>
-            <tr><th scope="row">회신·문의 정리</th><td class="x">직접 관리</td><td class="x">직접 관리</td><td class="us">✔ 정리 후 전달</td></tr>
-            <tr><th scope="row">대표님 시간</th><td class="x">많이 듦</td><td class="x">가장 많이 듦</td><td class="us">✔ 자료 전달만</td></tr>
+            <tr><th scope="row">연락처 출처 확인</th><td class="x">확인 어려움</td><td>직접 확인</td><td class="us"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>출처 기록</td></tr>
+            <tr><th scope="row">영문 제안서 작성</th><td class="x">직접 작성</td><td class="x">직접 작성</td><td class="us"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>맞춤 작성</td></tr>
+            <tr><th scope="row">발송·DM 운영</th><td class="x">직접 운영</td><td class="x">직접 운영</td><td class="us"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>대신 운영</td></tr>
+            <tr><th scope="row">회신·문의 정리</th><td class="x">직접 관리</td><td class="x">직접 관리</td><td class="us"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>정리 후 전달</td></tr>
+            <tr><th scope="row">대표님 시간</th><td class="x">많이 듦</td><td class="x">가장 많이 듦</td><td class="us"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>자료 전달만</td></tr>
           </tbody>
         </table>
       </div>
@@ -366,18 +500,20 @@ footer p{margin:4px 0}
   </section>
 
   <!-- PROCESS -->
-  <section class="sec center" id="process">
+  <section class="sec" id="process">
     <div class="wrap">
-      <span class="eyebrow">HOW WE WORK</span>
-      <h2>상담부터 문의 전달까지</h2>
-      <p class="lead">대표님은 제품 자료만 보내주시면 됩니다. 나머지는 글로이음이 진행합니다.</p>
+      <div class="sec-head">
+        <span class="eyebrow">HOW WE WORK</span>
+        <h2>상담부터 문의 전달까지</h2>
+        <p class="lead">대표님은 제품 자료만 보내주시면 됩니다. 나머지는 글로이음이 진행합니다.</p>
+      </div>
       <ol class="steps" data-anim>
-        <li><span class="e">💬</span><b>상담·계약</b><small>제품·국가·채널 결정</small></li>
-        <li><span class="e">📂</span><b>자료 전달</b><small>브로셔·카탈로그·이미지</small></li>
-        <li><span class="e">🔍</span><b>발굴·검증</b><small>바이어 탐색, 출처 확인</small></li>
-        <li><span class="e">✍️</span><b>메시지 작성</b><small>CL·DM 초안 확인</small></li>
-        <li><span class="e">🚀</span><b>발송·DM 운영</b><small>계정 안전 범위 내 분할</small></li>
-        <li><span class="e">📩</span><b>문의 전달</b><small>약정 시 월간 리포트</small></li>
+        <li><span class="e"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg></span><b>상담·계약</b><small>제품·국가·채널 결정</small></li>
+        <li><span class="e"><svg class="ic" aria-hidden="true"><use href="#i-folder"/></svg></span><b>자료 전달</b><small>브로셔·카탈로그·이미지</small></li>
+        <li><span class="e"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg></span><b>발굴·검증</b><small>바이어 탐색, 출처 확인</small></li>
+        <li><span class="e"><svg class="ic" aria-hidden="true"><use href="#i-pen"/></svg></span><b>메시지 작성</b><small>CL·DM 초안 확인</small></li>
+        <li><span class="e"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg></span><b>발송·DM 운영</b><small>계정 안전 범위 내 분할</small></li>
+        <li><span class="e"><svg class="ic" aria-hidden="true"><use href="#i-inbox"/></svg></span><b>문의 전달</b><small>약정 시 월간 리포트</small></li>
       </ol>
     </div>
   </section>
@@ -389,16 +525,16 @@ footer p{margin:4px 0}
         <div>
           <span class="eyebrow">VIDEO</span>
           <h2>27초 영상으로<br>글로이음을 확인하세요</h2>
-          <p class="lead" style="margin:0">바이어 발굴부터 실제 문의 전달까지, 한눈에 보실 수 있습니다.</p>
+          <p class="lead">바이어 발굴부터 실제 문의 전달까지, 한눈에 보실 수 있습니다.</p>
           <ul>
-            <li>🌏 두 채널 · 이메일과 Instagram DM</li>
-            <li>🔒 바이어 DB는 팔지 않습니다</li>
-            <li>🎁 런칭 파트너 선납 시 30% 할인</li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg>두 채널 · 이메일과 Instagram DM</li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>바이어 DB는 팔지 않습니다</li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-gift"/></svg>런칭 파트너 선납 시 30% 할인</li>
           </ul>
         </div>
         <div class="phone">
           <video id="ad" src="gloeum_ad.mp4" poster="gloeum_ad_poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="글로이음 소개 영상"></video>
-          <button class="sound" id="sound" type="button">🔇 소리 켜기</button>
+          <button class="sound" id="sound" type="button"><svg class="ic" aria-hidden="true"><use href="#i-sound-off"/></svg><span>소리 켜기</span></button>
         </div>
       </div>
     </div>
@@ -407,17 +543,19 @@ footer p{margin:4px 0}
   <!-- POLICY -->
   <section class="sec center">
     <div class="wrap">
-      <span class="eyebrow">DATA POLICY</span>
-      <h2>바이어 DB는 팔지 않습니다</h2>
-      <p class="lead">수집한 데이터는 운영에만 쓰고, 고객사에는 실제로 생긴 기회를 전달합니다.</p>
+      <div class="sec-head">
+        <span class="eyebrow">DATA POLICY</span>
+        <h2>바이어 DB는 팔지 않습니다</h2>
+        <p class="lead">수집한 데이터는 운영에만 쓰고, 고객사에는 실제로 생긴 기회를 전달합니다.</p>
+      </div>
       <div class="reveal policy">
         <div class="pbox yes">
-          <h3>✅ 고객사에 전달하는 것</h3>
-          <ul><li>📩 회신 · 인콰이어리 · 관심 반응</li><li>🏢 실제 상담이 생긴 바이어 정보</li><li>📊 월간 분석 리포트 (3개월 이상 약정)</li></ul>
+          <h3><svg class="ic" aria-hidden="true"><use href="#i-okcircle"/></svg>고객사에 전달하는 것</h3>
+          <ul><li>회신 · 인콰이어리 · 관심 반응</li><li>실제 상담이 생긴 바이어 정보</li><li>월간 분석 리포트 (3개월 이상 약정)</li></ul>
         </div>
         <div class="pbox no">
-          <h3>🚫 제공하지 않는 것</h3>
-          <ul><li>📋 전체 바이어 DB · 이메일 리스트</li><li>📸 Instagram 전체 계정 리스트</li><li>🗂️ 검색 · 수집 원본 데이터</li></ul>
+          <h3><svg class="ic" aria-hidden="true"><use href="#i-ban"/></svg>제공하지 않는 것</h3>
+          <ul><li>전체 바이어 DB · 이메일 리스트</li><li>Instagram 전체 계정 리스트</li><li>검색 · 수집 원본 데이터</li></ul>
         </div>
       </div>
       <p class="slogan">데이터를 파는 서비스가 아니라, 거래 기회를 만드는 서비스입니다.</p>
@@ -425,25 +563,27 @@ footer p{margin:4px 0}
   </section>
 
   <!-- PRICING -->
-  <section class="sec bg center" id="price">
+  <section class="sec bg" id="price">
     <div class="wrap">
-      <span class="eyebrow">PRICING</span>
-      <h2>요금 안내</h2>
-      <p class="lead">월 정상가 기준입니다. 무약정 월 구독 또는 3·6·12개월 기간약정 중 선택하실 수 있습니다.</p>
+      <div class="sec-head">
+        <span class="eyebrow">PRICING</span>
+        <h2>요금 안내</h2>
+        <p class="lead">월 정상가 기준입니다. 무약정 월 구독 또는 3·6·12개월 기간약정 중 선택하실 수 있습니다.</p>
+      </div>
       <div class="reveal plans">
         <div class="plan mail">
-          <div class="ph">✉️ 해외바이어 이메일 마케팅</div>
+          <div class="ph"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>해외바이어 이메일 마케팅</div>
           <table>
             <tr><th>Basic</th><td class="q">발송 500건 · CL 1종</td><td class="w">30만 원<small>선납가 21만 원</small></td></tr>
-            <tr><th>Standard<span class="hot">추천</span></th><td class="q">발송 1,500건 · CL 2종</td><td class="w">60만 원<small>선납가 42만 원</small></td></tr>
+            <tr class="rec"><th>Standard<span class="hot">추천</span></th><td class="q">발송 1,500건 · CL 2종</td><td class="w">60만 원<small>선납가 42만 원</small></td></tr>
             <tr><th>Pro</th><td class="q">발송 4,000건 · CL 4종</td><td class="w">100만 원<small>선납가 70만 원</small></td></tr>
           </table>
         </div>
         <div class="plan ig">
-          <div class="ph">📸 Instagram 바이어 DM 마케팅</div>
+          <div class="ph"><svg class="ic" aria-hidden="true"><use href="#i-insta"/></svg>Instagram 바이어 DM 마케팅</div>
           <table>
             <tr><th>Basic</th><td class="q">후보 계정 약 100개 조사</td><td class="w">50만 원<small>선납가 35만 원</small></td></tr>
-            <tr><th>Standard<span class="hot">추천</span></th><td class="q">후보 계정 약 300개 조사</td><td class="w">80만 원<small>선납가 56만 원</small></td></tr>
+            <tr class="rec"><th>Standard<span class="hot">추천</span></th><td class="q">후보 계정 약 300개 조사</td><td class="w">80만 원<small>선납가 56만 원</small></td></tr>
             <tr><th>Pro</th><td class="q">후보 계정 약 600개 조사</td><td class="w">120만 원<small>선납가 84만 원</small></td></tr>
           </table>
         </div>
@@ -451,7 +591,7 @@ footer p{margin:4px 0}
       <p class="fine">VAT 별도 · 선납가는 런칭 파트너 조건 충족 시 적용 · 조사 수는 목표치이며 적합한 계정에만 접촉 · 월간 리포트는 3개월 이상 약정에 포함 · 회신·계약 등 성과는 보장하지 않습니다</p>
 
       <div class="extras">
-        <h3>📝 필요할 때만 드는 별도 제작비 <span style="font-weight:400;font-size:14px;color:var(--ink-2)">(보내주신 자료로 운영이 기본, VAT 별도)</span></h3>
+        <h3>필요할 때만 드는 별도 제작비 <span class="sub">(보내주신 자료로 운영이 기본, VAT 별도)</span></h3>
         <dl>
           <div><dt>영문 회사소개</dt><dd>5만 원</dd></div>
           <div><dt>제품소개</dt><dd>제품당 3만 원</dd></div>
@@ -463,26 +603,28 @@ footer p{margin:4px 0}
 
       <div class="offer">
         <div>
-          <h3>🎁 런칭 파트너 10개사 · 선납 시 <em>30% 할인</em></h3>
+          <h3><svg class="ic" aria-hidden="true"><use href="#i-gift"/></svg>런칭 파트너 10개사 · 선납 시 <em>30% 할인</em></h3>
           <p>3·6·12개월 이용료를 한 번에 선납하시면 최초 계약기간 내내 할인가가 유지됩니다. 월 구독·월납 약정은 정상가, 갱신 시 정상가, VAT 별도.</p>
-          <a class="btn btn-white" href="http://pf.kakao.com/_QCMxas" target="_blank" rel="noopener">할인 상담받기</a>
+          <a class="btn btn-white" href="https://pf.kakao.com/_QCMxas" target="_blank" rel="noopener">할인 상담받기</a>
         </div>
         <div class="chart" data-anim role="img" aria-label="이메일 Standard와 Instagram Standard 6개월 이용 시 정상가 840만 원, 선납가 588만 원, 252만 원 절감">
-          <p class="cap">📊 예시 · 이메일 Standard + Instagram Standard 6개월 (VAT 별도)</p>
+          <p class="cap"><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg>예시 · 이메일 Standard + Instagram Standard 6개월 (VAT 별도)</p>
           <div class="bar normal"><div class="lab"><span>정상가</span><span><span data-count="840">840</span>만 원</span></div><div class="track"><div class="fill"></div></div></div>
           <div class="bar early"><div class="lab"><span>런칭 파트너 선납가</span><span><span data-count="588">588</span>만 원</span></div><div class="track"><div class="fill"></div></div></div>
-          <p class="save">💰 <span data-count="252">252</span>만 원 절감</p>
+          <p class="save"><span data-count="252">252</span>만 원 절감</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="sec center" id="faq">
-    <div class="wrap">
-      <span class="eyebrow">FAQ</span>
-      <h2>자주 묻는 질문</h2>
-      <p class="lead">상담 전에 가장 많이 물어보시는 내용입니다.</p>
+  <section class="sec" id="faq">
+    <div class="wrap split">
+      <div class="sec-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>자주 묻는 질문</h2>
+        <p class="lead">상담 전에 가장 많이 물어보시는 내용입니다.</p>
+      </div>
       <div class="reveal faq">
         <details><summary><span>바이어 리스트를 받을 수 있나요?</span></summary><p>전체 리스트는 드리지 않습니다. 회신이나 문의로 관심이 확인된 바이어의 정보만 전달해 드립니다.</p></details>
         <details><summary><span>회신이나 계약을 보장하나요?</span></summary><p>보장하지 않습니다. 반응은 시장과 제품에 따라 달라집니다. 대신 발송·접촉·회신 수치를 그대로 공유하고 매달 타깃과 문구를 조정합니다.</p></details>
@@ -497,12 +639,12 @@ footer p{margin:4px 0}
   <!-- CTA -->
   <section class="sec cta" id="contact">
     <div class="wrap">
-      <span class="eyebrow" style="color:var(--cyan)">CONTACT</span>
+      <span class="eyebrow">CONTACT</span>
       <h2>제품 자료만 준비해 주세요.<br>나머지는 글로이음이 맡겠습니다.</h2>
       <p class="lead">바이어 찾기, 메시지 작성, 발송, 회신 정리까지 한 번에 운영합니다.</p>
       <div class="actions">
-        <a class="btn btn-kakao" href="http://pf.kakao.com/_QCMxas" target="_blank" rel="noopener">💬 카톡으로 무료 상담받기</a>
-        <a class="btn btn-ghost" href="tel:16702531">📞 1670-2531</a>
+        <a class="btn btn-kakao" href="https://pf.kakao.com/_QCMxas" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>카톡으로 무료 상담받기</a>
+        <a class="btn btn-ghost" href="tel:16702531"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>1670-2531</a>
       </div>
       <dl class="info">
         <div><dt>운영사</dt><dd>케이비즈파트너즈</dd></div>
@@ -525,8 +667,8 @@ footer p{margin:4px 0}
 </footer>
 
 <div class="sticky">
-  <a class="btn btn-kakao" href="http://pf.kakao.com/_QCMxas" target="_blank" rel="noopener">💬 카톡 무료 상담</a>
-  <a class="btn btn-primary" href="tel:16702531" aria-label="대표번호로 전화">📞 전화</a>
+  <a class="btn btn-kakao" href="https://pf.kakao.com/_QCMxas" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>카톡 무료 상담</a>
+  <a class="btn btn-primary" href="tel:16702531" aria-label="대표번호로 전화"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>전화</a>
 </div>
 
 <script>
@@ -535,8 +677,10 @@ footer p{margin:4px 0}
   // video sound
   var v=document.getElementById('ad'), b=document.getElementById('sound');
   if(v&&b){
+    var bt=b.querySelector('span'), bi=b.querySelector('use');
     if(reduce){ v.removeAttribute('autoplay'); v.pause(); v.controls=true; }
-    b.addEventListener('click',function(){ v.muted=!v.muted; if(!v.muted){v.play().catch(function(){});} b.textContent=v.muted?'🔇 소리 켜기':'🔊 소리 끄기'; });
+    b.addEventListener('click',function(){ v.muted=!v.muted; if(!v.muted){v.play().catch(function(){});}
+      bt.textContent=v.muted?'소리 켜기':'소리 끄기'; bi.setAttribute('href',v.muted?'#i-sound-off':'#i-sound-on'); });
     v.addEventListener('error',function(){ b.style.display='none'; });
   }
 
@@ -548,7 +692,7 @@ footer p{margin:4px 0}
     for(i=0;i<N;i++){ var y=1-(i/(N-1))*2, r=Math.sqrt(1-y*y), th=Math.PI*(3-Math.sqrt(5))*i; pts.push([Math.cos(th)*r,y,Math.sin(th)*r]); }
     var hubs=[12,58,131,190,244,305,362,417,470,522,588,640].map(function(k){return pts[k];});
     var links=[[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,10],[10,11],[0,2],[3,5],[6,8],[9,11],[1,4]];
-    var cols=['#A9C8FF','#F5B8CF','#9EE6DA','#C9BDF7','#FBE3A1'];
+    var cols=['#5CBCFA','#8FD3FF','#5CC7DC','#5CBCFA','#F2A7C3'];
     function size(){ var b=c.getBoundingClientRect(); W=b.width; H=b.height; c.width=W*dpr; c.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
       R=Math.min(W*0.42,H*0.44); cx=W/2; cy=H*0.54; }
     function rot(p,a){ var ca=Math.cos(a),sa=Math.sin(a); var x=p[0]*ca+p[2]*sa, z=-p[0]*sa+p[2]*ca; var t=0.35,ct=Math.cos(t),st=Math.sin(t); return [x, p[1]*ct-z*st, p[1]*st+z*ct]; }
@@ -556,11 +700,11 @@ footer p{margin:4px 0}
     function draw(time){
       var a=time*0.00006;
       ctx.clearRect(0,0,W,H);
-      var g=ctx.createRadialGradient(cx,cy,R*0.2,cx,cy,R*1.15); g.addColorStop(0,'rgba(169,200,255,0.10)'); g.addColorStop(1,'rgba(169,200,255,0)');
+      var g=ctx.createRadialGradient(cx,cy,R*0.2,cx,cy,R*1.15); g.addColorStop(0,'rgba(92,188,250,0.10)'); g.addColorStop(1,'rgba(92,188,250,0)');
       ctx.fillStyle=g; ctx.beginPath(); ctx.arc(cx,cy,R*1.15,0,Math.PI*2); ctx.fill();
-      ctx.strokeStyle='rgba(169,200,255,0.18)'; ctx.lineWidth=1; ctx.beginPath(); ctx.arc(cx,cy,R,0,Math.PI*2); ctx.stroke();
+      ctx.strokeStyle='rgba(92,188,250,0.18)'; ctx.lineWidth=1; ctx.beginPath(); ctx.arc(cx,cy,R,0,Math.PI*2); ctx.stroke();
       for(i=0;i<N;i++){ var q=rot(pts[i],a); if(q[2]<-0.15) continue; var al=0.12+0.5*Math.max(0,q[2]);
-        ctx.fillStyle='rgba(201,220,255,'+al.toFixed(3)+')'; ctx.beginPath(); ctx.arc(cx+q[0]*R, cy-q[1]*R, 1.1+0.8*Math.max(0,q[2]), 0, Math.PI*2); ctx.fill(); }
+        ctx.fillStyle='rgba(190,225,255,'+al.toFixed(3)+')'; ctx.beginPath(); ctx.arc(cx+q[0]*R, cy-q[1]*R, 1.1+0.8*Math.max(0,q[2]), 0, Math.PI*2); ctx.fill(); }
       links.forEach(function(l,k){
         var A=hubs[l[0]],B=hubs[l[1]], col=cols[k%cols.length], seg=40, pathPts=[], vis=false;
         for(var j=0;j<=seg;j++){ var t=j/seg, p=slerp(A,B,t), lift=1+0.12*Math.sin(Math.PI*t), q=rot([p[0]*lift,p[1]*lift,p[2]*lift],a); if(q[2]>0) vis=true; pathPts.push(q); }
@@ -582,6 +726,20 @@ footer p{margin:4px 0}
     function loop(t){ if(!running) return; draw(t); requestAnimationFrame(loop); }
     requestAnimationFrame(loop);
   })();
+
+  // 메뉴 현재 위치 표시
+  (function(){
+    if(!('IntersectionObserver' in window)) return;
+    var links=[].slice.call(document.querySelectorAll('.menu a.l'));
+    var map={}; links.forEach(function(a){ map[a.getAttribute('href').slice(1)]=a; });
+    var so=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(!e.isIntersecting) return;
+        links.forEach(function(a){ a.classList.remove('cur'); a.removeAttribute('aria-current'); });
+        var a=map[e.target.id]; if(a){ a.classList.add('cur'); a.setAttribute('aria-current','true'); } });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    Object.keys(map).forEach(function(id){ var s=document.getElementById(id); if(s) so.observe(s); });
+  })();
+
   // count-up
   function count(el){
     var to=+el.getAttribute('data-count'), from=el.hasAttribute('data-from')?+el.getAttribute('data-from'):0;
