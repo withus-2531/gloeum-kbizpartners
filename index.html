@@ -292,6 +292,40 @@ footer p{margin:4px 0}
   .reveal{opacity:1;transform:none}
   .steps li{opacity:1;transform:none}
 }
+
+/* ===== 런칭 파트너 팝업 ===== */
+.lp-back{position:fixed;inset:0;z-index:200;background:rgba(3,7,15,.66);display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;transition:opacity .25s}
+.lp-back[hidden]{display:none}
+.lp-back.show{opacity:1}
+.lp{position:relative;width:min(440px,100%);max-height:calc(100vh - 32px);overflow:auto;background:var(--bg2);border:1px solid var(--line);border-radius:20px;color:var(--ink);box-shadow:0 24px 60px rgba(0,0,0,.5);transform:translateY(12px);transition:transform .25s}
+.lp-back.show .lp{transform:none}
+.lp-in{padding:26px 24px 18px;display:flex;flex-direction:column;gap:16px}
+.lp-x{position:absolute;top:10px;right:10px;width:44px;height:44px;border:0;background:transparent;color:var(--ink-2);font-size:26px;line-height:1;cursor:pointer;border-radius:10px}
+.lp-x:hover{color:#fff;background:rgba(255,255,255,.06)}
+.lp-badge{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--bg0);background:var(--gold);border-radius:999px;padding:5px 12px}
+.lp h3{margin:0;font-size:22px;line-height:1.35;color:var(--head);letter-spacing:-.02em}
+.lp-hero{display:flex;align-items:center;gap:16px}
+.lp-pct{font-size:68px;font-weight:900;line-height:.9;color:var(--gold);letter-spacing:-.04em}
+.lp-pct small{font-size:36px}
+.lp-hero p{margin:0;font-size:14px;line-height:1.55;color:var(--ink-2)}
+.lp-hero b{display:block;font-size:16px;color:var(--head);margin-bottom:2px}
+.lp-tbl{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+.lp-tbl th{font-size:12px;font-weight:600;color:var(--ink-2);text-align:left;padding:0 0 6px}
+.lp-tbl th:last-child,.lp-tbl td:last-child{text-align:right}
+.lp-tbl td{padding:9px 0;border-top:1px solid var(--line)}
+.lp-tbl s{color:var(--ink-2);margin-right:6px}
+.lp-tbl .v{font-weight:800;color:var(--head)}
+.lp-tbl tr.rec td{color:var(--head)}
+.lp-tbl .tag{font-size:11px;font-weight:700;color:var(--bg0);background:var(--rose);border-radius:999px;padding:2px 7px;margin-left:6px}
+.lp-dm{margin:-4px 0 0;font-size:12.5px;color:var(--ink-2)}
+.lp-cta{display:flex;flex-direction:column;gap:8px}
+.lp-cta .btn{width:100%}
+.lp-fine{margin:0;font-size:11.5px;line-height:1.55;color:var(--ink-2)}
+.lp-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding:6px 12px 6px 20px;font-size:13px;color:var(--ink-2)}
+.lp-foot label{display:flex;align-items:center;gap:8px;cursor:pointer;min-height:44px}
+.lp-foot input{width:16px;height:16px;accent-color:var(--gold)}
+.lp-foot button{border:0;background:transparent;color:var(--ink);font:inherit;font-weight:600;cursor:pointer;min-height:44px;padding:0 10px}
+@media (prefers-reduced-motion:reduce){.lp-back,.lp{transition:none}}
 </style>
 </head>
 <body>
@@ -546,6 +580,7 @@ footer p{margin:4px 0}
       <span class="kbp-badge">🏢 BY KBIZ PARTNERS</span>
       <h2>바이어 발굴, 그다음이 걱정되신다면<br><em>케이비즈파트너즈</em>가 함께합니다</h2>
       <p>글로이음은 중소기업 전문 경영컨설팅 케이비즈파트너즈가 운영합니다. 회사 안은 스퀘어컨설팅으로 다지고, 시장 밖은 글로이음으로 넓힙니다.</p>
+      <div style="margin-top:22px"><a class="btn btn-ghost" href="KBP_company_profile.pdf" target="_blank" rel="noopener">📄 회사소개서 보기</a></div>
     </div>
   </div>
 
@@ -632,6 +667,7 @@ footer p{margin:4px 0}
           <div class="contact">
             <a class="btn btn-kakao" href="http://pf.kakao.com/_QCMxas" target="_blank" rel="noopener">💬 경영컨설팅 상담</a>
             <a class="btn btn-ghost" href="tel:16702531">📞 대표번호 1670-2531</a>
+            <a class="btn btn-ghost" href="KBP_company_profile.pdf" target="_blank" rel="noopener">📄 회사소개서 보기</a>
           </div>
         </div>
       </div>
@@ -668,6 +704,7 @@ footer p{margin:4px 0}
         <a class="btn btn-kakao" href="http://pf.kakao.com/_QCMxas" target="_blank" rel="noopener">💬 해외바이어 상담</a>
         <a class="btn btn-white" href="http://pf.kakao.com/_QCMxas" target="_blank" rel="noopener">🏢 경영컨설팅 상담</a>
         <a class="btn btn-ghost" href="tel:16702531">📞 1670-2531</a>
+        <a class="btn btn-ghost" href="KBP_company_profile.pdf" target="_blank" rel="noopener">📄 회사소개서 보기</a>
       </div>
       <dl class="info">
         <div><dt>운영사</dt><dd>케이비즈파트너즈</dd></div>
@@ -767,6 +804,60 @@ footer p{margin:4px 0}
     });
   },{threshold:.25});
   targets.forEach(function(t){ io.observe(t); });
+})();
+</script>
+
+<!-- 런칭 파트너 팝업 -->
+<div class="lp-back" id="lpBack" hidden>
+  <div class="lp" role="dialog" aria-modal="true" aria-labelledby="lpTitle">
+    <button class="lp-x" type="button" id="lpX" aria-label="닫기">×</button>
+    <div class="lp-in">
+      <span class="lp-badge">EARLY BIRD</span>
+      <h3 id="lpTitle">해외바이어 발굴,<br>런칭 파트너 가격으로 시작하세요</h3>
+      <div class="lp-hero">
+        <div class="lp-pct">30<small>%</small></div>
+        <p><b>런칭 후 최초 10개 기업 한정</b>3·6·12개월 계약기간 전체를 선납하시면 이용료 30% 할인</p>
+      </div>
+      <table class="lp-tbl">
+        <thead><tr><th>이메일 마케팅</th><th>구성</th><th>월 요금</th></tr></thead>
+        <tbody>
+          <tr><td>Basic</td><td>500건 · CL 1종</td><td><s>30</s><span class="v">21만 원</span></td></tr>
+          <tr class="rec"><td>Standard<span class="tag">추천</span></td><td>1,500건 · CL 2종</td><td><s>60</s><span class="v">42만 원</span></td></tr>
+          <tr><td>Pro</td><td>4,000건 · CL 4종</td><td><s>100</s><span class="v">70만 원</span></td></tr>
+        </tbody>
+      </table>
+      <p class="lp-dm">Instagram 바이어 DM도 동일 적용 · 50→35 / 80→56 / 120→84만 원</p>
+      <div class="lp-cta">
+        <a class="btn btn-kakao" href="http://pf.kakao.com/_QCMxas" target="_blank" rel="noopener">💬 카톡으로 런칭 혜택 상담</a>
+        <a class="btn btn-ghost" href="#price" id="lpPrice">요금 자세히 보기</a>
+      </div>
+      <p class="lp-fine">VAT 별도 · 월납·무약정 및 갱신 시 정상가 · 월 최대 10개사 운영 · 회신·계약 성과는 보장하지 않습니다</p>
+    </div>
+    <div class="lp-foot">
+      <label for="lpToday"><input type="checkbox" id="lpToday">오늘 하루 보지 않기</label>
+      <button type="button" id="lpClose">닫기</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY='gloeum_lp_hide_until', back=document.getElementById('lpBack');
+  if(!back) return;
+  var until=0; try{until=+localStorage.getItem(KEY)||0}catch(e){}
+  if(Date.now()<until) return;
+  var last=null;
+  function open(){last=document.activeElement;back.hidden=false;requestAnimationFrame(function(){back.classList.add('show')});document.getElementById('lpX').focus();document.addEventListener('keydown',onKey)}
+  function close(){
+    if(document.getElementById('lpToday').checked){var t=new Date();t.setHours(24,0,0,0);try{localStorage.setItem(KEY,String(t.getTime()))}catch(e){}}
+    back.classList.remove('show');document.removeEventListener('keydown',onKey);
+    setTimeout(function(){back.hidden=true;if(last&&last.focus)last.focus()},250)
+  }
+  function onKey(e){if(e.key==='Escape')close()}
+  document.getElementById('lpX').onclick=close;
+  document.getElementById('lpClose').onclick=close;
+  document.getElementById('lpPrice').addEventListener('click',close);
+  back.addEventListener('click',function(e){if(e.target===back)close()});
+  setTimeout(open,1200);
 })();
 </script>
 </body>
